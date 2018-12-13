@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Style id="z1">
+<IconStyle>
+<Icon>
+<href>
+http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png
+</href>
+</Icon>
+</IconStyle>
+</Style>
+
+<Style id="myPoly">
+    <PolyStyle>  
+    <color>7d0000ff</color>
+    <outline>1</outline>
+    </PolyStyle>
+  <LineStyle>
+  	<width>50</width>
+  </LineStyle>
+</Style>
+
+
+
+<Folder>
+	<name>Points</name>
+         <description>My places</description>
+<Placemark>
+	<name>Home</name>
+	<styleUrl>#z1</styleUrl>
+	<Point>
+	<coordinates>-118.287445,34.028309</coordinates>
+	</Point>
+</Placemark>
+<Placemark>
+	<name>Target</name>
+	<styleUrl>#z1</styleUrl>
+	<Point>
+	<coordinates>-118.284305,34.025882</coordinates>
+	</Point>
+</Placemark>
+<Placemark>
+	<name>leavey</name>
+	<styleUrl>#z1</styleUrl>
+	<Point>
+	<coordinates>-118.282549,34.021875</coordinates>
+	</Point>
+</Placemark>
+<Placemark>
+	<name>Amazon</name>
+	<styleUrl>#z1</styleUrl>
+	<Point>
+	<coordinates>-118.285230,34.025725</coordinates>
+	</Point>
+</Placemark>
+<Placemark>
+	<name>Taper Hall</name>
+	<styleUrl>#z1</styleUrl>
+	<Point>
+	<coordinates>-118.284475,34.022264</coordinates>
+	</Point>
+</Placemark>
+<Placemark>
+	<name>DRB</name>
+	<styleUrl>#z1</styleUrl>
+	<Point>
+	<coordinates>-118.291209,34.021558</coordinates>
+	</Point>
+</Placemark>
+<Placemark>
+	<name>Lyon Center</name>
+	<styleUrl>#z1</styleUrl>
+	<Point>
+	<coordinates>-118.28838,34.024607</coordinates>
+	</Point>
+</Placemark>
+<Placemark>
+	<name>OIS</name>
+	<styleUrl>#z1</styleUrl>
+	<Point>
+	<coordinates>-118.281631,34.021924</coordinates>
+	</Point>
+</Placemark>
+<Placemark>
+	<name>AlexanderSchool</name>
+	<styleUrl>#z1</styleUrl>
+	<Point>
+	<coordinates>-118.284012,34.017249</coordinates>
+	</Point>
+</Placemark>
+ </Folder>
+
+ ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ <Folder>
+         <name>Convex Hull</name>
+         <description>My Convex Hull</description>
+         <Placemark>
+<styleUrl>#myPoly</styleUrl>
+
+<Polygon>
+	<styleUrl>#myPoly</styleUrl>
+	<outerBoundaryIs>
+		<LinearRing>
+			<coordinates>
+				-118.284012,34.017249,10
+				-118.291209,34.021558,10
+				-118.287445,34.028309,10
+				-118.284305,34.025882,10
+				-118.281631,34.021924,10
+				-118.284012,34.017249,10
+			</coordinates>
+		</LinearRing>
+	</outerBoundaryIs>
+</Polygon>
+</Placemark>
+      </Folder>
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+<Folder>
+	<name>My Nearest Neighbours</name>
+	<Placemark>
+
+    	 <Style> 
+  <LineStyle>  
+   <color>7d000000</color>
+   <width>5</width>
+  </LineStyle> 
+ </Style>
+
+      <LineString>
+        <extrude>1</extrude>
+        <amazon>1</amazon>
+        <coordinates>-118.287445,34.028309,0  -118.285230,34.025725,0</coordinates>
+      </LineString>
+</Placemark>
+
+<Placemark>
+ <Style> 
+  <LineStyle>  
+   <color>7d000000</color>
+   <width>5</width>
+  </LineStyle> 
+ </Style>
+  <LineString>
+        <extrude>1</extrude>
+        <Lyon>2</Lyon>
+        <coordinates>-118.287445,34.028309,0  -118.28838,34.024607,0</coordinates>
+      </LineString>
+    
+
+</Placemark>
+<Placemark>
+	 <Style> 
+  <LineStyle>  
+   <color>7d000000</color>
+   <width>5</width>
+  </LineStyle> 
+ </Style>
+      <LineString>
+        <extrude>1</extrude>
+        <target>3</target>
+        <coordinates>-118.287445,34.028309,0  -118.284305,34.025882,0</coordinates>
+      </LineString>
+   
+
+</Placemark>
+   
+
+    
+</Folder>
+</Document>
+</kml>

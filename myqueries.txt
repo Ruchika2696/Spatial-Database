@@ -1,0 +1,41 @@
+//Table Creation and Data Entry:
+
+CREATE TABLE mylocations
+(PLACE VARCHAR(15), LOCATION geometry);
+
+INSERT INTO mylocations(PLACE,LOCATION)
+VALUES('Home',ST_GeomFromText('POINT(-118.287445 34.028309)')),
+('Target',ST_GeomFromText('POINT(-118.284305 34.025882)')),
+('leavey',ST_GeomFromText('POINT(-118.282549 34.021875)')),
+('amazon',ST_GeomFromText('POINT(-118.285230 34.025725)')),
+('taper hall',ST_GeomFromText('POINT(-118.284475 34.022264)')),
+('DRB',ST_GeomFromText('POINT(-118.291209 34.021558)')),
+('Lyon Center',ST_GeomFromText('POINT(-118.28838 34.024607)')),
+('OIS',ST_GeomFromText('POINT(-118.281631 34.021924)')),
+('AlexanderSchool',ST_GeomFromText('POINT(-118.284012 34.017249)'));
+
+//Convex Hull:
+
+SELECT ST_AsText(ST_ConvexHull(ST_Collect(location))) FROM mylocations;
+
+//Convex Hull output:
+
+POLYGON((-118.284012 34.017249,-118.291209 34.021558,-118.287445 34.028309,-118.284305 34.025882,-118.281631 34.021924,-118.284012 34.017249))
+
+//Nearest Neighbour
+
+ SELECT l2.PLACE 
+FROM mylocations AS l1, mylocations AS l2
+WHERE l1.PLACE='Home' AND l1.PLACE<>l2.PLACE
+ORDER BY ST_DISTANCE(l1.location,l2.location)
+LIMIT 3
+
+//Nearest Neighbour Output
+
+    place
+-------------
+ amazon
+ Lyon Center
+ Target
+(3 rows)
+
